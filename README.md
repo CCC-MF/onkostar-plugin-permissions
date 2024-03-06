@@ -34,7 +34,7 @@ ob der aufrufende Benutzer Zugriff auf die Prozedur hat und gibt nur bei vorhand
 den Namen des Formulars zu dieser prozedur zurück.
 
 ```java
-import DNPM.security.DelegatingDataBasedPermissionEvaluator;
+import de.ukw.ccc.onkostar.permissions.DelegatingDataBasedPermissionEvaluator;
 import de.itc.onkostar.api.IOnkostarApi;
 
 class DemoAnalyzer implements IProcedureAnalyzer {
@@ -99,9 +99,9 @@ Wird die Methode `getFormName(Procedure)` aufgerufen und der Benutzer hat keinen
 Prozedur, wird eine Exception geworfen.
 
 ```java
-import DNPM.security.FormSecured;
-import DNPM.security.PermissionType;
-import DNPM.security.PersonPoolSecured;
+import de.ukw.ccc.onkostar.permissions.FormSecured;
+import de.ukw.ccc.onkostar.permissions.PermissionType;
+import de.ukw.ccc.onkostar.permissions.PersonPoolSecured;
 
 @Service
 class DemoService {
@@ -118,8 +118,8 @@ class DemoService {
 Der Aufruf im Analyzer kann nun wie folgt aussehen:
 
 ```java
-import DNPM.security.DelegatingDataBasedPermissionEvaluator;
-import DNPM.security.IllegalSecuredObjectAccessException;
+import de.ukw.ccc.onkostar.permissions.DelegatingDataBasedPermissionEvaluator;
+import de.ukw.ccc.onkostar.permissions.IllegalSecuredObjectAccessException;
 import de.itc.onkostar.api.IOnkostarApi;
 
 class DemoAnalyzer implements IProcedureAnalyzer {
@@ -167,7 +167,7 @@ class DemoAnalyzer implements IProcedureAnalyzer {
 ## Nutzung der Pluginfunktionalität in eigenen Plugins
 
 Das Plugin **onkostar-plugin-permissions** muss in Onkostar installiert sein.
-Die API-JAR dieses Plugins muss zudem für das eigene Plugin eingebunden werden:
+Die API-JAR dieses Plugins muss zudem für das eigene Plugin eingebunden werden und sich im Verzeichnis `libs` befinden:
 
 ```
 <dependency>
