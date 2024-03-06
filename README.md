@@ -164,6 +164,20 @@ class DemoAnalyzer implements IProcedureAnalyzer {
 }
 ```
 
+## Nutzung der Pluginfunktionalität in eigenen Plugins
+
+Das Plugin **onkostar-plugin-permissions** muss in Onkostar installiert sein.
+Die API-JAR dieses Plugins muss zudem für das eigene Plugin eingebunden werden:
+
+```
+<dependency>
+    <groupId>de.ukw.ccc.onkostar</groupId>
+    <artifactId>onkostar-plugin-permissions-api</artifactId>
+    <!-- Oder spätere/neuere Version -->
+    <version>0.1.0-SNAPSHOT</version>
+</dependency>
+```
+
 ## Bauen des Plugins
 
 Für das Bauen des Plugins ist zwingend JDK in Version 11 erforderlich.
